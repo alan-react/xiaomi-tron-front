@@ -1,7 +1,11 @@
-import './App.module.css';
+import React from "react";
+
 import HomePage from "./pages/homePage/homePage";
 import Header from "./components/header/header";
-import React from "react";
+
+import './App.module.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (

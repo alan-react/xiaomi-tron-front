@@ -1,17 +1,19 @@
 import style from "./header.module.css";
+
 import React from "react";
 
+import logo from "../../assets/Xiaomi_logo.png"
 
 const Header = () => {
     return (
         <header className={style.header}>
-            <div>Главная</div>
-            <div>Смартфоны</div>
-            <div>Компьютеры</div>
-            <div>Аксессуары</div>
-            <div>Гаджеты</div>
-            <div><input className={style.searchInput} type="search" name="search" placeholder="Поиск..."/></div>
-            <div>Зарегестироваться / Войти</div>
+            <img src={logo} alt="Logo png"/>
+                <div>КАТАЛОГ</div>
+                <div>О КОМПАНИИ</div>
+                <div>АДРЕС ОФИСА</div>
+                <div>+88005553535</div>
+                <div><input className={style.searchInput} type="search" name="search" placeholder="Поиск..."/></div>
+                <div>Зарегестироваться / Войти</div>
         </header>
     )
 }

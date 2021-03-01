@@ -8,15 +8,24 @@
 .header {
     display: flex;
     justify-content: space-between;
-    background-color: #1F3E5C;
-    margin-right: 50px;
-    margin-left: 50px;
-    padding: 15px 60px 15px 60px;
+    background-color: #444851;
+    max-height: 40px;
+    min-height: 40px;
     font-size: 16px;
     color: white;
     cursor: pointer;
+    padding: 0 50px 0 50px;
+}
+
+.header img {
+    width: 40px;
 }
 
 a {
     text-decoration: none;
+}
+
+.headerContent {
+    display: flex;
+    padding: 10px 0 10px 0;
 }
