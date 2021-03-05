@@ -13,6 +13,7 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import img from "../../assets/xiaomi-redmi-note-9-pro.jpeg"
 
 import style from "./card.module.css"
+import {connect} from "react-redux";
 
 const useStyles = makeStyles({
     media: {
@@ -50,4 +51,8 @@ const ProductCard = () => {
     );
 }
 
-export default ProductCard
+const mapStateToProps = () => ({
+
+})
+
+export default connect(mapStateToProps, {})(ProductCard)
