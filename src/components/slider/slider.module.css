@@ -5,6 +5,27 @@
     padding-top: 20px;
 }
 
+.sliderImg {
+    background-color: black;
+}
+
+.sliderImg img {
+    opacity: 0.50;
+}
+
+.caption {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+
+.slider li{
+    border-radius: 100%;
+    width: 15px !important;
+    height: 15px !important;
+}
+
 .slider img {
     max-width: 1200px;
     min-width: 1200px;

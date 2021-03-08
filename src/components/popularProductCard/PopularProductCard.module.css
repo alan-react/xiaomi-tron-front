@@ -1,0 +1,47 @@
+.media {
+    height: 250px;
+    width: 250px;
+    margin: 0 -10px 0 -10px;
+}
+
+.byBtn {
+    border: 1px solid #FE6700;
+    padding-right: 10px;
+    width: 150px;
+}
+
+.card:hover {
+    transition: 0.2s;
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.card {
+    margin: 20px 10px 20px 10px;
+    max-height: 410px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: 0.8s;
+}
+
+.price {
+    text-decoration: line-through;
+    text-align: right;
+}
+
+.cardButtons {
+    justify-content: space-between;
+}
+
+.icon {
+    cursor: pointer;
+
+}
+
+.actualPrice {
+    color: #EA8C64;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+

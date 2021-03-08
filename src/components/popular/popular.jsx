@@ -1,17 +1,35 @@
 import React from 'react';
 
-import ProductCard from "../сards/card";
+import {Swiper, SwiperSlide} from "swiper/react"
+import PopularProductCard from "../popularProductCard/popularProductCard";
 
-import style from "./popular.module.css"
+import 'swiper/swiper.scss';
+import "swiper/swiper-bundle.css"
+import 'swiper/components/pagination/pagination.scss';
+import 'swiper/components/scrollbar/scrollbar.scss';
+import 'swiper/components/navigation/navigation.scss';
+
+import style from "./popular.module.scss"
+import SwiperCore, {Autoplay, EffectCoverflow, Navigation, Scrollbar} from "swiper";
+
+SwiperCore.use([Navigation, Scrollbar, Autoplay, EffectCoverflow ]);
 
 const Popular = () => {
-    const test = [0,1,2]
+    const test = [0, 14, 14, 14, 12, 12, 12, 12,]
 
     return (
-        <div>
-            <div className={style.cards}>
-                {test.map(() => <ProductCard/>)}
-            </div>
+        <div className={style.container}>
+            <Swiper sspaceBetween={100}
+                    slidesPerView={5}
+                    autoplay={true}
+                    pagination={{clickable: true}}
+                    scrollbar={{draggable: true}}>
+                {test.map(() =>
+                    <SwiperSlide>
+                        <PopularProductCard/>
+                    </SwiperSlide>
+                )}
+            </Swiper>
         </div>
     );
 };

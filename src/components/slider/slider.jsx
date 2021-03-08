@@ -14,7 +14,7 @@ const Slider = () => {
                     <img src={img1} width={1200} height={600}
                          className="d-block w-100"
                          alt="first slide"/>
-                    <Carousel.Caption>
+                    <Carousel.Caption className={style.caption}>
                         Xiaomi Mi TV Ultra уже есть в китае!
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -22,15 +22,27 @@ const Slider = () => {
                     <img src={img2} width={1200} height={600}
                          className="d-block w-100"
                          alt="first slide"/>
-                    <Carousel.Caption>
-                        Di Mass
-                    </Carousel.Caption>
+                             <Carousel.Caption className={style.caption}>
+                                 Арман отсоси хуй и соси хуй маму ебал
+                                 Арман отсоси хуй и соси хуй маму ебал
+                                 Арман отсоси хуй и соси хуй маму ебал
+                                 Арман отсоси хуй и соси хуй маму ебал
+                                 Арман отсоси хуй и соси хуй маму ебал
+                                 Арман отсоси хуй и соси хуй маму ебал
+                                 Арман отсоси хуй и соси хуй маму ебал
+                                 Арман отсоси хуй и соси хуй маму ебал
+                                 Арман отсоси хуй и соси хуй маму ебал
+                                 Арман отсоси хуй и соси хуй маму ебал
+                                 Арман отсоси хуй и соси хуй маму ебал
+                                 Арман отсоси хуй и соси хуй маму ебал
+                                 Арман отсоси хуй и соси хуй маму ебал
+                             </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item className={style.sliderImg}>
                     <img src={img3} width={1200} height={600}
                          className="d-block w-100"
                          alt="first slide"/>
-                    <Carousel.Caption>
+                    <Carousel.Caption className={style.caption}>
                         Di Mass
                     </Carousel.Caption>
                 </Carousel.Item>

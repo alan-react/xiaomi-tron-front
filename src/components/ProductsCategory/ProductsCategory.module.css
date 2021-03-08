@@ -1,18 +1,10 @@
 .category {
    display: grid;
-   grid-template-areas: "filter cards";
-
+   max-height: 900px;
 }
 
 .cards {
    display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-   grid-area: cards;
-}
-
-.filter {
-   margin: 20px;
-   width: 400px;
-   background-color: #61dafb;
-   grid-area: filter;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+   grid-gap: 10px;
 }
