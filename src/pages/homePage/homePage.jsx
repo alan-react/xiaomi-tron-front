@@ -3,12 +3,16 @@ import style from "./homePage.module.css";
 import Slider from "../../components/slider/slider";
 import Popular from "../../components/popular/popular";
 import ProductsCategory from "../../components/ProductsCategory/ProductsСategory";
+import Categories from "../../components/navbar/Navbar";
 
 
 const HomePage = () => {
     return (
         <div className={style.wrapper}>
-            <Slider/>
+            <div className={style.sliderCategories}>
+                <Categories/>
+                <Slider/>
+            </div>
             <p className={style.line}><span>Популярные товары</span></p>
             <Popular/>
             <p className={style.line}><span>Товары по категориям</span></p>

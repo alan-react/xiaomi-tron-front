@@ -10,9 +10,9 @@ import 'swiper/components/scrollbar/scrollbar.scss';
 import 'swiper/components/navigation/navigation.scss';
 
 import style from "./popular.module.scss"
-import SwiperCore, {Autoplay, EffectCoverflow, Navigation, Scrollbar} from "swiper";
+import SwiperCore, {Autoplay, EffectCoverflow, Navigation, Scrollbar, Mousewheel} from "swiper";
 
-SwiperCore.use([Navigation, Scrollbar, Autoplay, EffectCoverflow ]);
+SwiperCore.use([Navigation, Scrollbar, Autoplay, EffectCoverflow, Mousewheel]);
 
 const Popular = () => {
     const test = [0, 14, 14, 14, 12, 12, 12, 12,]
@@ -20,6 +20,7 @@ const Popular = () => {
     return (
         <div className={style.container}>
             <Swiper sspaceBetween={100}
+                    mousewheel
                     slidesPerView={5}
                     autoplay={true}
                     pagination={{clickable: true}}

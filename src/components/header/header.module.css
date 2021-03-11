@@ -32,7 +32,7 @@
 }
 
 .inputSearch {
-    width: 300px;
+    width: 270px;
     margin-left: 20px;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
@@ -64,7 +64,7 @@
     background-color: #444851;
 }
 
-.links a:hover {
+.links a a:hover {
     text-decoration: none;
     color: #EF7E1F;
 }

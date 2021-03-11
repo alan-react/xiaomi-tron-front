@@ -3,6 +3,11 @@
     margin-left: auto;
     width: 1200px;
 }
+
+.sliderCategories {
+    display: flex;
+}
+
 .line {
     font-family: Roboto;
     top: 20px;

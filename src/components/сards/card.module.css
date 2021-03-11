@@ -8,6 +8,10 @@
     width: 150px;
 }
 
+.media {
+    height: 220px;
+}
+
 .icon {
     cursor: pointer;
 
@@ -23,7 +27,6 @@
 
 .card {
     margin: 5px;
-    width: 95%;
     max-height: 440px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: 0.8s;

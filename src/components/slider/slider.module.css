@@ -1,16 +1,15 @@
 .slider {
-    width: 1200px;
+    width: 1000px;
     margin-left: auto;
-    margin-right: auto;
     padding-top: 20px;
 }
 
 .sliderImg {
-    background-color: black;
+
 }
 
 .sliderImg img {
-    opacity: 0.50;
+
 }
 
 .caption {
@@ -27,10 +26,10 @@
 }
 
 .slider img {
-    max-width: 1200px;
-    min-width: 1200px;
+    max-width: 1000px;
+    min-width: 1000px;
 }
 
 .sliderImg img {
-    width: 1200px;
+    width: 1000px;
 }

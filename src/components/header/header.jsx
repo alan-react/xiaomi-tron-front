@@ -26,10 +26,12 @@ const Header = () => {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className={style.links}>
-                                <Nav.Link><Link to="/users">СМАРТФОНЫ</Link></Nav.Link>
-                                <Nav.Link><Link to="/users">НОУТБУКИ</Link></Nav.Link>
-                                <Nav.Link><Link to="/users">ГАДЖЕТЫ</Link></Nav.Link>
-                                <Nav.Link><Link to="/users">АКСЕСУАРЫ</Link></Nav.Link>
+                                <Nav.Link><Link to="/">АКЦИИ</Link></Nav.Link>
+                                <Nav.Link><Link to="/">НОВОСТИ</Link></Nav.Link>
+                                <Nav.Link><Link to="/">ОБЗОРЫ</Link></Nav.Link>
+                                <Nav.Link><Link to="/">АДРЕСА</Link></Nav.Link>
+                                <Nav.Link><Link to="/">КОНТАКТЫ</Link></Nav.Link>
+                                <Nav.Link><Link to="/">НОВИНКИ</Link></Nav.Link>
                                 <FormControl type="text" placeholder="Поиск..." custom={true} className={style.inputSearch} />
                                 <Button className={style.button} variant="outline-light">Зарегестрироваться</Button>
                                 <Button className={style.button} variant="outline-light">Войти</Button>
