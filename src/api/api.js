@@ -7,7 +7,7 @@ export const ProductsApi = {
                 withCredentials: true,
             },
         }).then(
-            response => response
+            response => response.data
         )
     }
 }

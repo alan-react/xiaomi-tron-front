@@ -8,12 +8,11 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
-import img from "../../assets/xiaomi-redmi-note-9-pro.jpeg"
 
 import style from "./card.module.css"
 import {connect} from "react-redux";
 
-const ProductCard = () => {
+const ProductCard = ({price, title, img}) => {
 
     return (
         <Card className={style.card}>
@@ -25,10 +24,10 @@ const ProductCard = () => {
                 />
                 <CardContent>
                     <Typography className={style.title} gutterBottom variant="h6" component="h2">
-                        Xiaomi Note 9
+                        {title}
                     </Typography>
                     <Typography className={style.price} variant="body1" color="textSecondary" component="p">
-                       80 000 KZT
+                        {price} KZT
                     </Typography>
                 </CardContent>
             </CardActionArea>

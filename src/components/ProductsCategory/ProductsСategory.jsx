@@ -3,34 +3,42 @@ import ProductCard from "../сards/card";
 import style from "./ProductsCategory.module.scss"
 import {connect} from "react-redux";
 import {getProducts} from "../../redux/reducers/mainReducer";
-import classNames from "classnames";
+import BaseLoader from "../loader/loader"
 
 
-const ProductsCategory = ({getProducts}) => {
-    const testProducts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+const ProductsCategory = ({getProducts, products}) => {
+
     const testCategories = ["Смартфоны Xiaomi", "Ноутбуки Xiaomi", "Электро Самокаты", "Беговые Дорожки"]
-    getProducts()
+    if (!products) getProducts()
+    console.log(products)
     const [activeId, setActiveId] = useState(0)
-    return (
-        <>
-            <div className={style.nav}>
-                {testCategories.map((name, index) =>
-                    <span id={index}
-                          onClick={() => setActiveId(index)}
-                          className={`${activeId === index ? style.activeNav : style.navElement}`}>
+    if (products) {
+        return (
+            <>
+                <div className={style.nav}>
+                    {testCategories.map((name, index) =>
+                        <span id={index}
+                              onClick={() => setActiveId(index)}
+                              className={`${activeId === index ? style.activeNav : style.navElement}`}>
                         {name}
                     </span>)}
-            </div>
-            <div className={style.category}>
-                <div className={style.cards}>
-                    {testProducts.map((i, ind) => <ProductCard id={ind}/>)}
                 </div>
-            </div>
-        </>
-    );
-};
+                <div className={style.category}>
+                    <div className={style.cards}>
+                        {products.products.map((i, ind) =>
+                            <ProductCard id={ind} img={products.img} title={i.name} price={i.price}/>
+                            )}
+                    </div>
+                </div>
+            </>
+        );
+    }
+    else return BaseLoader
+}
 
-const mapStateToProps = () => ({})
+const mapStateToProps = (state) => ({
+    products: state.main
+})
 
 
 export default connect(mapStateToProps, {getProducts})(ProductsCategory)
