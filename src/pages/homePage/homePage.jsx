@@ -4,6 +4,7 @@ import Slider from "../../components/slider/slider";
 import Popular from "../../components/popular/popular";
 import ProductsCategory from "../../components/ProductsCategory/ProductsСategory";
 import Categories from "../../components/navbar/Navbar";
+import BaseLoader from "../../components/loader/loader";
 
 
 const HomePage = () => {

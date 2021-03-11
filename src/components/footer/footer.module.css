@@ -1,0 +1,16 @@
+.content {
+    padding: 50px;
+    display: flex;
+}
+
+.wrapper {
+    background-color: #444851;
+    height: 400px;
+    color: white;
+}
+
+.title {
+    border-bottom: 2px solid #FE6700;
+    padding-bottom: 3px;
+    width: max-content;
+}

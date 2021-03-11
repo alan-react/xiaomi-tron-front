@@ -1,10 +1,11 @@
 import React from "react";
 
-import HomePage from "./pages/homePage/homePage";
 import Header from "./components/header/header";
 
 import './App.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Routes from "./routes/routes";
+import Footer from "./components/footer/footer";
 
 
 const App = () => {
@@ -12,7 +13,8 @@ const App = () => {
   return (
     <>
         <Header/>
-        <HomePage/>
+        <Routes/>
+        <Footer/>
     </>
   );
 }

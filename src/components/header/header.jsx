@@ -27,8 +27,8 @@ const Header = () => {
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className={style.links}>
                                 <Nav.Link><Link to="/">АКЦИИ</Link></Nav.Link>
-                                <Nav.Link><Link to="/">НОВОСТИ</Link></Nav.Link>
-                                <Nav.Link><Link to="/">ОБЗОРЫ</Link></Nav.Link>
+                                <Nav.Link><Link to="/news">НОВОСТИ</Link></Nav.Link>
+                                <Nav.Link><Link to="/reviews">ОБЗОРЫ</Link></Nav.Link>
                                 <Nav.Link><Link to="/">АДРЕСА</Link></Nav.Link>
                                 <Nav.Link><Link to="/">КОНТАКТЫ</Link></Nav.Link>
                                 <Nav.Link><Link to="/">НОВИНКИ</Link></Nav.Link>
