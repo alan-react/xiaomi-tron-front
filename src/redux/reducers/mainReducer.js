@@ -19,7 +19,6 @@ export const mainReducer = (state = initialState, action) => {
 const setProducts = (data) => ({type: SET_PRODUCTS, data})
 
 export const getProducts = () => async (dispatch) => {
-    debugger
     const data = await ProductsApi.getProducts()
     dispatch(setProducts(data))
 

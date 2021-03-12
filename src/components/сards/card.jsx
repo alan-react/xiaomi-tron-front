@@ -12,14 +12,14 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import style from "./card.module.css"
 import {connect} from "react-redux";
 
-const ProductCard = ({price, title, img}) => {
 
+const ProductCard = ({price, title, img, available}) => {
     return (
         <Card className={style.card}>
             <CardActionArea>
+                <img src={img}/>
                 <CardMedia
                     className={style.media}
-                    image={img}
                     title="Contemplative Reptile"
                 />
                 <CardContent>
@@ -32,17 +32,13 @@ const ProductCard = ({price, title, img}) => {
                 </CardContent>
             </CardActionArea>
             <CardActions className={style.cardButtons}>
-                    <AddShoppingCartIcon className={style.icon}/>
-                <Button size="small" color="secondary" className={style.byBtn}>
-                    Купить
+                {available ? <AddShoppingCartIcon className={style.icon}/> : <div/>}
+                <Button disabled={!available} size="small" color="secondary" className={style.byBtn}>
+                    {available ? "Купить" : "Нет в наличии "}
                 </Button>
             </CardActions>
         </Card>
     );
 }
 
-const mapStateToProps = () => ({
-
-})
-
-export default connect(mapStateToProps, {})(ProductCard)
+export default ProductCard

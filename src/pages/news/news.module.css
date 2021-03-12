@@ -1,0 +1,28 @@
+.card {
+    width: 300px;
+    height: 250px;
+    text-align: center;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-color: #444851;
+    position: relative;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.footer button {
+    margin: 5px;
+    color: white;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}

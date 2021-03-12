@@ -2,6 +2,10 @@
     justify-content: space-between;
 }
 
+.empty {
+    margin: 20px;
+}
+
 .byBtn {
     border: 1px solid #FE6700;
     padding-right: 10px;

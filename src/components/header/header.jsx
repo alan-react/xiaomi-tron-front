@@ -1,7 +1,7 @@
 import React from "react";
 
 import {Button, Container, FormControl, Nav, Navbar} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import styled from "styled-components"
 
 import logo from "../../assets/Xiaomi_logo.png"
@@ -17,7 +17,7 @@ const Styles = styled.div `
     }
 `
 
-const Header = () => {
+const Header = ({showLogin}) => {
     return (
             <Styles>
                 <Navbar collapsOnSelect expand="sm" className={style.header} >
@@ -34,7 +34,9 @@ const Header = () => {
                                 <Nav.Link><Link to="/">НОВИНКИ</Link></Nav.Link>
                                 <FormControl type="text" placeholder="Поиск..." custom={true} className={style.inputSearch} />
                                 <Button className={style.button} variant="outline-light">Зарегестрироваться</Button>
-                                <Button className={style.button} variant="outline-light">Войти</Button>
+                                    <Button onClick={showLogin} className={style.button} variant="outline-light">
+                                        Войти
+                                    </Button>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

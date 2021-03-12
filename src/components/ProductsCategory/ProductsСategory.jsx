@@ -10,7 +10,6 @@ const ProductsCategory = ({getProducts, products}) => {
 
     const testCategories = ["Смартфоны Xiaomi", "Ноутбуки Xiaomi", "Электро Самокаты", "Беговые Дорожки"]
     if (!products) getProducts()
-    console.log(products)
     const [activeId, setActiveId] = useState(0)
     if (products) {
         return (
@@ -26,7 +25,8 @@ const ProductsCategory = ({getProducts, products}) => {
                 <div className={style.category}>
                     <div className={style.cards}>
                         {products.products.map((i, ind) =>
-                            <ProductCard id={ind} img={products.img} title={i.name} price={i.price}/>
+                            <ProductCard id={ind} img={"../../images" + i.image} available={i.available}
+                                         title={i.name} price={i.price}/>
                             )}
                     </div>
                 </div>
