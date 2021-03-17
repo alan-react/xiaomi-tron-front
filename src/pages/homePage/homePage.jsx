@@ -3,15 +3,15 @@ import style from "./homePage.module.css";
 import Slider from "../../components/slider/slider";
 import Popular from "../../components/popular/popular";
 import ProductsCategory from "../../components/ProductsCategory/ProductsСategory";
-import Categories from "../../components/navbar/Navbar";
-import BaseLoader from "../../components/loader/loader";
-
+import Navbar from "../../components/navbar/Navbar";
+import {Dropdown} from "react-bootstrap";
 
 const HomePage = () => {
     return (
         <div className={style.wrapper}>
             <div className={style.sliderCategories}>
-                <Categories/>
+                <Navbar/>
+
                 <Slider/>
             </div>
             <p className={style.line}><span>Популярные товары</span></p>

@@ -21,13 +21,13 @@ const Popular = () => {
         <div className={style.container}>
             <Swiper sspaceBetween={100}
                     mousewheel
-                    slidesPerView={5}
+                    slidesPerView={6}
                     autoplay={true}
                     pagination={{clickable: true}}
                     scrollbar={{draggable: true}}>
-                {test.map(() =>
+                {test.map((i, index) =>
                     <SwiperSlide>
-                        <PopularProductCard/>
+                        <PopularProductCard key={index}/>
                     </SwiperSlide>
                 )}
             </Swiper>

@@ -1,40 +1,82 @@
 import React, {useState} from 'react';
 import style from "./login.module.css"
 import {Modal} from "react-bootstrap";
+import {Button} from "@material-ui/core";
+import validator from "validator";
 
-const Login = ({showLogin, closeLogin}) => {
+const Login = ({showLogin, closeLogin, showForgot, login}) => {
 
+    const [passwordValue, setPasswordValue] = useState("")
+    const handleChangePassword = (e) => setPasswordValue(e.target.value)
+
+    const [emailValue, setEmailValue] = useState("")
+
+    const [error, setError] = useState(null)
+
+    const handleChangeEmail = (e) => {
+        setEmailValue(e.target.value)
+        if (validator.isEmail(e.target.value)) {
+            setError(null)
+        } else {
+            setError('Введите корректный Email')
+        }
+
+    }
+
+    const handleLogin = () => {
+        login(emailValue, passwordValue)
+        setPasswordValue("")
+        setEmailValue("")
+    }
 
     return (
         <>
             <Modal centered={true} show={showLogin} onHide={closeLogin}>
-            <form className={style.form}>
-                <Modal.Header>
-                    <h3>Sign In</h3>
-                </Modal.Header>
+                <form className={style.form}>
+                    <Modal.Header className={style.loginHeader}>
+                        <h3>Авторизация</h3>
+                    </Modal.Header>
+                    <div className={style.formWrapper}>
+                        <div className="form-group">
+                            <label>Email</label>
+                            <input type="email"
+                                   name="email"
+                                   value={emailValue}
+                                   onChange={handleChangeEmail}
+                                   className={style.input}
+                                   placeholder="Введите email"/>
+                        </div>
+                        {error && <span>{error}</span>}
 
-                <div className="form-group">
-                    <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email"/>
-                </div>
+                        <div className="form-group">
+                            <label>Пароль</label>
+                            <div>
+                                <input type="password"
+                                       name="password"
+                                       value={passwordValue}
+                                       onChange={handleChangePassword}
+                                       className={style.input}
+                                       placeholder="Введите пароль"/>
+                            </div>
+                        </div>
 
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password"/>
-                </div>
+                        <div className="form-group">
+                            <div className="custom-control custom-checkbox">
+                                <input type="checkbox" className="custom-control-input" id="customCheck1"/>
+                                <label className="custom-control-label" htmlFor="customCheck1">Запомнить меня</label>
+                            </div>
+                        </div>
 
-                <div className="form-group">
-                    <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck1"/>
-                        <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
+                        <Button variant="contained"
+                                className={style.button}
+                                color="primary"
+                                onClick={handleLogin}>
+                            Войти</Button>
+                        <p className="forgot-password text-right">
+                            Забыли <a onClick={() => {showForgot(); closeLogin()}}>пароль?</a>
+                        </p>
                     </div>
-                </div>
-
-                <button type="submit" className="btn btn-primary btn-block">Submit</button>
-                <p className="forgot-password text-right">
-                    Forgot <a href="#">password?</a>
-                </p>
-            </form>
+                </form>
             </Modal>
         </>
     );

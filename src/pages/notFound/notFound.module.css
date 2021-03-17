@@ -1,0 +1,14 @@
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60vh;
+    height: 60vh;
+    position: relative;
+    text-align: center;
+    top: 60px;
+}
+
+.img {
+    width: 150px;
+    margin-top: 20px;
+}

@@ -1,47 +1,65 @@
 import React from "react";
 
 import {Button, Container, FormControl, Nav, Navbar} from "react-bootstrap";
-import {Link, Redirect} from "react-router-dom";
+import {Link} from "react-router-dom";
 import styled from "styled-components"
 
 import logo from "../../assets/Xiaomi_logo.png"
 
 import style from "./header.module.css";
 
-const Styles = styled.div `
-    a, .navbar-brand, .navbar-nav .nav-link {
+const Styles = styled.div`
+  a, .navbar-brand, .navbar-nav .nav-link {
     color: #adb1b8;
+
     &:hover {
-        color: white
-        }
+      color: white
     }
+  }
 `
 
-const Header = ({showLogin}) => {
+const Header = ({showLogin, showCart, footerRef, isAuth}) => {
+
+    const focusHandler = () => footerRef.current.focus()
+
     return (
-            <Styles>
-                <Navbar collapsOnSelect expand="sm" className={style.header} >
-                    <Container>
-                        <Navbar.Brand><img src={logo} className={style.logo} alt="Logo png"/></Navbar.Brand>
-                        <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
-                        <Navbar.Collapse id="responsive-navbar-nav">
-                            <Nav className={style.links}>
-                                <Nav.Link><Link to="/">АКЦИИ</Link></Nav.Link>
-                                <Nav.Link><Link to="/news">НОВОСТИ</Link></Nav.Link>
-                                <Nav.Link><Link to="/reviews">ОБЗОРЫ</Link></Nav.Link>
-                                <Nav.Link><Link to="/">АДРЕСА</Link></Nav.Link>
-                                <Nav.Link><Link to="/">КОНТАКТЫ</Link></Nav.Link>
-                                <Nav.Link><Link to="/">НОВИНКИ</Link></Nav.Link>
-                                <FormControl type="text" placeholder="Поиск..." custom={true} className={style.inputSearch} />
-                                <Button className={style.button} variant="outline-light">Зарегестрироваться</Button>
-                                    <Button onClick={showLogin} className={style.button} variant="outline-light">
-                                        Войти
-                                    </Button>
-                            </Nav>
-                        </Navbar.Collapse>
-                    </Container>
-                </Navbar>
-            </Styles>
+        <Styles>
+            <Navbar collapsOnSelect expand="sm" className={style.header}>
+                <Container className={style.container}>
+                    <Navbar.Brand>
+                        <Link to="/"><img src={logo} className={style.logo} alt="Logo png"/></Link>
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className={style.links}>
+                            <Nav.Link><Link to="/">ГЛАВНАЯ</Link></Nav.Link>
+                            <Nav.Link><Link to="/news">НОВОСТИ</Link></Nav.Link>
+                            <Nav.Link><Link to="/reviews">ОБЗОРЫ</Link></Nav.Link>
+                            <Nav.Link><Link onClick={focusHandler}>АДРЕСА И КОНТАКТЫ</Link></Nav.Link>
+                            <FormControl type="text" placeholder="Поиск..." custom={true}
+                                         className={style.inputSearch}/>
+                            <Button onClick={showCart} className={style.button} variant="outline-light">
+                                Корзина
+                            </Button>
+                            <Button className={style.button} variant="outline-light">
+                                Зарегестрироваться
+                            </Button>
+                            {isAuth
+                                ? <Button className={style.button}
+                                          variant="outline-light">
+                                    Выйти
+                                </Button>
+                                : <Button onClick={showLogin}
+                                          className={style.button}
+                                          variant="outline-light">
+                                    Войти
+                                </Button>
+                            }
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+        </Styles>
     )
 }
 

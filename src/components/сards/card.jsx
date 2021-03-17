@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -10,17 +11,16 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 
 import style from "./card.module.css"
-import {connect} from "react-redux";
 
 
 const ProductCard = ({price, title, img, available}) => {
     return (
         <Card className={style.card}>
             <CardActionArea>
-                <img src={img}/>
                 <CardMedia
                     className={style.media}
                     title="Contemplative Reptile"
+                    image={img}
                 />
                 <CardContent>
                     <Typography className={style.title} gutterBottom variant="h6" component="h2">

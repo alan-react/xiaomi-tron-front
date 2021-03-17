@@ -1,24 +1,66 @@
 .card {
     width: 300px;
-    height: 250px;
+    height: 350px;
     text-align: center;
-    color: white;
+    color: #ffffff;
     margin-left: auto;
+    background-image: linear-gradient(to right bottom,
+    #444851, #444851, #444851, #444851,
+    #444851, #4a4d61, #555070, #66527c,
+    #994f87, #ce4578, #f44751, #fe6700);
     margin-right: auto;
     margin-top: 20px;
-    background-color: #444851;
     position: relative;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: 0.8s;
+    /*background: no-repeat center;*/
+    /*background-size: 350px;*/
+}
+
+.bunny {
+    width: 100px;
+    display: flex;
+}
+
+.card:hover {
+    transition: 0.2s;
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 90%;
+    text-align: left;
+}
+
+.img {
+    position: absolute;
+    width: 250px;
+}
+
+.cardText {
+    text-align: start;
+    opacity: 0.5;
+    margin-left: 20px;
 }
 
 .footer {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 15px;
+    display: flex;
+    left: 15px;
+    justify-content: space-between;
+    width: 280px;
 }
 
 .footer button {
     margin: 5px;
     color: white;
+    height: 40px;
+    top: 50px;
 }
 
 .cards {

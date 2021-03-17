@@ -21,6 +21,6 @@ const setProducts = (data) => ({type: SET_PRODUCTS, data})
 export const getProducts = () => async (dispatch) => {
     const data = await ProductsApi.getProducts()
     dispatch(setProducts(data))
-
-    console.log(data)
 }
+
+

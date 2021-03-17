@@ -1,19 +1,35 @@
 .wrapper {
     background-color: #444851;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 0;
     height: 400px;
     color: white;
     margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .content {
     display: flex;
 }
 
+.contacts {
+    display: flex;
+    transition: 1s;
+
+}
+
+.contacts:focus {
+    border: none;
+    outline: none;
+    user-focus: none;
+    transition: 1s;
+    transform: scale(1.05);
+}
 
 .title {
     border-bottom: 2px solid #FE6700;
     padding-bottom: 3px;
-    width: 300px;
+    width: 250px;
+    margin: 20px;
 }
