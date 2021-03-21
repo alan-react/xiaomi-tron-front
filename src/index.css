@@ -1,4 +1,7 @@
-
 .carousel-indicators .active {
     background-color: #FE6700;
+}
+
+body {
+    overflow-x: hidden;
 }

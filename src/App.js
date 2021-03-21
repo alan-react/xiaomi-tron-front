@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 import Header from "./components/header/header";
 
@@ -11,12 +11,20 @@ import Cart from "./components/cart/cart";
 import Forgot from "./components/forgot/forgot";
 import {connect} from "react-redux";
 import {login} from "./redux/reducers/authReducer";
+import {getProductsBySearch, initialize} from "./redux/reducers/mainReducer";
+import BaseLoader from "./components/loader/loader";
 
-const App = ({login, isAuth}) => {
-
+const App = ({
+                 login, isAuth, getProductsBySearch,
+                 searchProducts, initialize, initialized
+             }) => {
     const [showLogin, setShowLogin] = useState(false)
     const [showCart, setShowCart] = useState(false)
     const [showForgot, setShowForgot] = useState(false)
+
+    useEffect(() => {
+        initialize()
+    }, [])
 
     const HandleShowLogin = () => setShowLogin(true)
     const HandleCloseLogin = () => setShowLogin(false)
@@ -28,21 +36,27 @@ const App = ({login, isAuth}) => {
     const HandleCloseForgot = () => setShowForgot(false)
 
     const footerRef = useRef()
-
-    return (
+    if (initialized) return (
         <>
-            <Header isAuth={isAuth} footerRef={footerRef} showLogin={HandleShowLogin} showCart={HandleShowCart}/>
-            <Login login={login} closeLogin={HandleCloseLogin} showLogin={showLogin} showForgot={HandleShowForgot} />
+            <Header searchProducts={searchProducts}
+                    getProducts={getProductsBySearch}
+                    isAuth={isAuth} footerRef={footerRef}
+                    showLogin={HandleShowLogin} showCart={HandleShowCart}/>
+            <Login login={login} closeLogin={HandleCloseLogin} showLogin={showLogin}
+                   showForgot={HandleShowForgot}/>
             <Forgot closeForgot={HandleCloseForgot} showForgot={showForgot}/>
             <Cart showCart={showCart} closeCart={HandleCloseCart}/>
             <Routes/>
-            <Footer footerRef={footerRef} />
+            <Footer footerRef={footerRef}/>
         </>
     )
+    else return <BaseLoader/>
 };
 
 const mapStateToProps = (state) => ({
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    searchProducts: state.main.searchProducts,
+    initialized: state.main.initialized,
 })
 
-export default connect(mapStateToProps, {login})(App)
+export default connect(mapStateToProps, {login, getProductsBySearch, initialize})(App)

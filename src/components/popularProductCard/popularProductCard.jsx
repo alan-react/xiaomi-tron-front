@@ -23,13 +23,13 @@ const PopularProductCard = () => {
                 />
                 <CardContent style={{paddingTop: 0, marginTop: 0,
                     marginBottom: 0, paddingBottom: 0}}>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography style={{fontSize: 20}} gutterBottom variant="h5" component="h2">
                         Xiaomi Note 9
                     </Typography>
                     <Typography variant="body2" className={styles.price} color="textSecondary" component="p">
                         80 000 KZT
                     </Typography>
-                    <Typography variant="h5" className={styles.actualPrice} component="h3">
+                    <Typography variant="h5" style={{fontSize: 20}} className={styles.actualPrice} component="h3">
                         79 999 KZT
                     </Typography>
                 </CardContent>

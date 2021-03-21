@@ -1,5 +1,9 @@
+
+
 .cardButtons {
+    display: flex;
     justify-content: space-between;
+
 }
 
 .empty {

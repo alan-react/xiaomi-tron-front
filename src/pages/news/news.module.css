@@ -1,14 +1,19 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
 .card {
+    margin-left: 10px;
+    margin-right: 10px;
     width: 300px;
     height: 350px;
     text-align: center;
     color: #ffffff;
-    margin-left: auto;
     background-image: linear-gradient(to right bottom,
     #444851, #444851, #444851, #444851,
     #444851, #4a4d61, #555070, #66527c,
     #994f87, #ce4578, #f44751, #fe6700);
-    margin-right: auto;
     margin-top: 20px;
     position: relative;
     border-radius: 10px;

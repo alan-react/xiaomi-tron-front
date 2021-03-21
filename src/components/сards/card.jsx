@@ -23,7 +23,7 @@ const ProductCard = ({price, title, img, available}) => {
                     image={img}
                 />
                 <CardContent>
-                    <Typography className={style.title} gutterBottom variant="h6" component="h2">
+                    <Typography style={{fontSize: 20}} className={style.title} gutterBottom variant="h6" component="h2">
                         {title}
                     </Typography>
                     <Typography className={style.price} variant="body1" color="textSecondary" component="p">

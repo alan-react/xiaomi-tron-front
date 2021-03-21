@@ -35,6 +35,7 @@ const Routes = () => {
                 </Route>
                 <Route exact path="/login">
                     <Login/>
+                    <HomePage/>
                 </Route>
                 <Route exact path="/cart">
                     <CartPage/>

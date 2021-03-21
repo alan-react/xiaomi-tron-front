@@ -12,6 +12,7 @@ const ProductsCategory = React.memo(({getProducts, products}) => {
 
         useEffect(() => {
             if (!products) getProducts()
+            debugger
         }, [products])
 
         console.log(products)
@@ -42,7 +43,7 @@ const ProductsCategory = React.memo(({getProducts, products}) => {
 )
 
 const mapStateToProps = (state) => ({
-    products: state.main
+    products: state.main.products
 })
 
 

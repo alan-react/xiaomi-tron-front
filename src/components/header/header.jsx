@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 import {Button, Container, FormControl, Nav, Navbar} from "react-bootstrap";
 import {Link} from "react-router-dom";
@@ -18,9 +18,32 @@ const Styles = styled.div`
   }
 `
 
-const Header = ({showLogin, showCart, footerRef, isAuth}) => {
+const Header = ({showLogin, showCart, footerRef, isAuth, getProducts, searchProducts}) => {
 
     const focusHandler = () => footerRef.current.focus()
+
+    const [searchValue, setSearchValue] = useState("")
+    const handleSearchValue = (e) => setSearchValue(e.target.value)
+    const handleEnterPress = (e) => {
+        if (e.key === "Enter") {
+            getProducts(searchValue)
+        }
+    }
+
+    const [openModalSearch, setOpenModalSearch] = useState(false)
+
+    useEffect(() => {
+        document.body.onclick = () => {
+            setOpenModalSearch(false)
+        }
+        if (searchProducts) {
+            setOpenModalSearch(true)
+        }
+    }, [searchProducts])
+
+    useEffect(() => {
+        if (searchValue) setTimeout(() => getProducts(searchValue), 1000)
+    }, [searchValue])
 
     return (
         <Styles>
@@ -36,8 +59,27 @@ const Header = ({showLogin, showCart, footerRef, isAuth}) => {
                             <Nav.Link><Link to="/news">НОВОСТИ</Link></Nav.Link>
                             <Nav.Link><Link to="/reviews">ОБЗОРЫ</Link></Nav.Link>
                             <Nav.Link><Link onClick={focusHandler}>АДРЕСА И КОНТАКТЫ</Link></Nav.Link>
-                            <FormControl type="text" placeholder="Поиск..." custom={true}
-                                         className={style.inputSearch}/>
+                            <div>
+                                <FormControl type="text" placeholder="Поиск..."
+                                             custom={true} value={searchValue}
+                                             onChange={handleSearchValue}
+                                             onKeyPress={handleEnterPress}
+                                             className={style.inputSearch}/>
+                                {openModalSearch &&
+                                <div className={style.searchResult}>
+                                    {searchProducts.map((el) =>
+                                        <div className={style.resElement}>
+                                                <img src={el.image} width="40"/>
+                                                <div className={style.titlePrice}>
+                                                    <h5 className={style.title}>{el.name}</h5>
+                                                    <div className={style.price}>{el.price}</div>
+                                                </div>
+                                        </div>
+                                    )}
+                                </div>
+                                }
+                            </div>
+
                             <Button onClick={showCart} className={style.button} variant="outline-light">
                                 Корзина
                             </Button>

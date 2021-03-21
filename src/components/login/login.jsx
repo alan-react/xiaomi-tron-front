@@ -3,8 +3,9 @@ import style from "./login.module.css"
 import {Modal} from "react-bootstrap";
 import {Button} from "@material-ui/core";
 import validator from "validator";
+import {connect} from "react-redux";
 
-const Login = ({showLogin, closeLogin, showForgot, login}) => {
+const Login = ({showLogin, closeLogin, showForgot, login, isAuth}) => {
 
     const [passwordValue, setPasswordValue] = useState("")
     const handleChangePassword = (e) => setPasswordValue(e.target.value)
@@ -25,8 +26,13 @@ const Login = ({showLogin, closeLogin, showForgot, login}) => {
 
     const handleLogin = () => {
         login(emailValue, passwordValue)
-        setPasswordValue("")
-        setEmailValue("")
+        if (!emailValue) {setError("Заполните Email ")}
+        if (!passwordValue) {setError("Заполните пароль ")}
+        if (isAuth) {
+            setPasswordValue("")
+            setEmailValue("")
+            closeLogin()
+        }
     }
 
     return (
@@ -82,4 +88,8 @@ const Login = ({showLogin, closeLogin, showForgot, login}) => {
     );
 };
 
-export default Login;
+const mapStateToProps = (state) => ({
+    isAuth: state.auth.isAuth
+})
+
+export default connect(mapStateToProps)(Login)
