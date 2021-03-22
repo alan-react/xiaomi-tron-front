@@ -1,0 +1,23 @@
+.header {
+    background-color: #444851;
+    display: flex;
+}
+
+.logo {
+    width: max-content;
+    display: flex;
+
+}
+
+.header a {
+    color: white;
+}
+
+.logoTitle {
+    color: white;
+    margin-left: 20px;
+}
+
+.logoTitle {
+    padding-top: 10px;
+}
