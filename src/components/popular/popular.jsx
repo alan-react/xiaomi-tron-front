@@ -1,38 +1,40 @@
-import React from 'react';
-
-import {Swiper, SwiperSlide} from "swiper/react"
+import React, {useEffect} from 'react';
 import PopularProductCard from "../popularProductCard/popularProductCard";
-
-import 'swiper/swiper.scss';
-import "swiper/swiper-bundle.css"
-import 'swiper/components/pagination/pagination.scss';
-import 'swiper/components/scrollbar/scrollbar.scss';
-import 'swiper/components/navigation/navigation.scss';
-
 import style from "./popular.module.scss"
-import SwiperCore, {Autoplay, EffectCoverflow, Navigation, Scrollbar, Mousewheel} from "swiper";
+import {connect} from "react-redux";
+import {getPopularProducts} from "../../redux/reducers/mainReducer";
 
-SwiperCore.use([Navigation, Scrollbar, Autoplay, EffectCoverflow, Mousewheel]);
+const Popular = ({products, getPopularProducts}) => {
+    const test = [0, 14, 14, 14, 1, 1]
 
-const Popular = () => {
-    const test = [0, 14, 14, 14, 12, 12, 12, 12,]
+    useEffect(() => {
+        if (!products) getPopularProducts()
+    }, [products])
 
     return (
-        <div className={style.container}>
-            <Swiper sspaceBetween={100}
-                    mousewheel
-                    slidesPerView={6}
-                    autoplay={true}
-                    pagination={{clickable: true}}
-                    scrollbar={{draggable: true}}>
-                {test.map((i, index) =>
-                    <SwiperSlide>
-                        <PopularProductCard key={index}/>
-                    </SwiperSlide>
+        <div className={style.wrapper}>
+            <h3 className={style.title}>Популярные Товары</h3>
+            <div className={style.cards}>
+                {products && products.map((product, id) => (
+                        <>
+                            <PopularProductCard key={id} image={product.image}
+                                                actualPrice={product.newprice}
+                                                title={product.name}
+                                                oldPrice={product.oldprice}/>
+                            <PopularProductCard key={id} image={product.image}
+                                                actualPrice={product.newprice}
+                                                title={product.name}
+                                                oldPrice={product.oldprice}/>
+                        </>
+                    )
                 )}
-            </Swiper>
+            </div>
         </div>
     );
 };
 
-export default Popular;
+const mapStateToProps = (state) => ({
+    products: state.main.popularProducts
+})
+
+export default connect(mapStateToProps, {getPopularProducts})(Popular)

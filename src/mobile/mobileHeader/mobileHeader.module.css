@@ -6,7 +6,6 @@
 .logo {
     width: max-content;
     display: flex;
-
 }
 
 .header a {
@@ -19,5 +18,5 @@
 }
 
 .logoTitle {
-    padding-top: 10px;
+
 }

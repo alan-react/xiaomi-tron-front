@@ -1,11 +1,26 @@
 .wrapper {
     margin-right: auto;
     margin-left: auto;
-    width: 1200px;
+    width: 100%;
 }
 
 .sliderCategories {
     display: flex;
+}
+
+.popularNewProducts {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.reviewsNews {
+    background-color: #F2EDEA;
+    background-position: unset;
+    width: 100%;
+    max-width: 1400px;
+    margin: 20px auto 0 auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .line {

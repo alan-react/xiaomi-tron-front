@@ -1,7 +1,21 @@
-.carousel-indicators .active {
-    background-color: #FE6700;
-}
+@import '~mdb-ui-kit/css/mdb.min.css';
 
 body {
     overflow-x: hidden;
 }
+
+body::-webkit-scrollbar {
+    width: 0
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #fe6700;
+    outline: 1px solid #fd5f0d;
+    scroll: 10px;
+}
+
+

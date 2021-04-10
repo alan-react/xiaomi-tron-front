@@ -1,0 +1,124 @@
+.nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Roboto;
+}
+
+
+.hamburger {
+    margin: 0 10px 3px 0;
+    background-color: white !important;
+}
+
+.hamburger div {
+    background-color: rgb(61, 61, 61);
+    width: 20px;
+    height: 3px;
+    margin-top: 3px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.navElement {
+    display: flex;
+    margin: 10px 10px;
+    font-size: 18px;
+    align-items: center;
+    min-width: max-content;
+    color: black;
+    cursor: pointer !important;
+}
+
+.navElement:hover :nth-child(n - 1){
+    background-color: #fe6700;
+}
+
+.resElement img {
+    border-radius: 10px;
+}
+
+.resElement:hover {
+    background-color: white;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+}
+
+.resElement {
+    cursor: pointer;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    background-color: #fff;
+    border-radius: 10px;
+
+    /*border-radius: 25px 0 0 25px;*/
+    display: flex;
+    width: 250px;
+    margin: 10px;
+    height: 40px;
+    top: 10px;
+}
+
+.titlePrice {
+    display: block;
+    height: 30px;
+}
+
+.price {
+    position: relative;
+    opacity: 0.5;
+    bottom: 0;
+    margin-top: -7px;
+    padding-left: 5px;
+}
+
+.searchResult {
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    z-index: 100;
+    top: 50px;
+    margin-left: 20px;
+    width: 270px;
+    height: auto;
+    font-size: 1rem;
+    color: black;
+    background-color: #495057;
+    border-top: none;
+    outline: none;
+    line-height: 1.5;
+    background-clip: padding-box;
+}
+
+.navElement:hover {
+    text-decoration: none;
+    color: #fe6700;
+    -webkit-transition: color 200ms linear;
+    -ms-transition: color 200ms linear;
+    transition: color 200ms linear;
+}
+
+.cart {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    background-color: white !important;
+    margin-right: 10px;
+}
+
+.search {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 5px;
+    margin-left: 20px;
+    height: 35px;
+    padding: 10px;
+    border: none;
+    font-size: 18px;
+    background-color: #E8E8E8;
+    outline: none;
+}

@@ -12,31 +12,33 @@ import Button from "@material-ui/core/Button";
 import React from 'react';
 
 
-const PopularProductCard = () => {
+const PopularProductCard = ({image, title, oldPrice, actualPrice}) => {
     return (
         <Card className={styles.card}>
             <CardActionArea>
                 <CardMedia
                     className={styles.media}
-                    image={img}
-                    title="Contemplative Reptile"
-                />
+                    image={image}
+                 />
                 <CardContent style={{paddingTop: 0, marginTop: 0,
-                    marginBottom: 0, paddingBottom: 0}}>
-                    <Typography style={{fontSize: 20}} gutterBottom variant="h5" component="h2">
-                        Xiaomi Note 9
+                    marginBottom: 0, paddingBottom: 0, height: 100}}>
+                    <Typography className={styles.title} style={{fontSize: 18}}
+                                gutterBottom variant="h5" component="h2">
+                        {title}
                     </Typography>
-                    <Typography variant="body2" className={styles.price} color="textSecondary" component="p">
-                        80 000 KZT
+                    <Typography variant="body2" className={styles.price}
+                                color="textSecondary" component="p">
+                        {oldPrice} KZT
                     </Typography>
-                    <Typography variant="h5" style={{fontSize: 20}} className={styles.actualPrice} component="h3">
-                        79 999 KZT
+                    <Typography variant="h5" style={{fontSize: 20}}
+                                className={styles.actualPrice} component="h3">
+                        {actualPrice} KZT
                     </Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions className={styles.cardButtons}>
                 <AddShoppingCartIcon className={styles.icon}/>
-                <Button className={styles.byBtn} size="small" color="secondary">
+                <Button className={styles.byBtn} size="small" variant="outlined">
                     Купить
                 </Button>
             </CardActions>

@@ -2,6 +2,10 @@ import * as axios from "axios"
 
 export const ProductsApi = {
 
+    getPopularProducts() {
+        return axios.get(`/api/popularproducts`)
+    },
+
     getSliderImages() {
         return axios.get(`/api/sliders`)
     },
@@ -18,6 +22,10 @@ export const AuthApi = {
 
     login(login, password) {
         return axios.post(`/api/auth`, {login, password})
+    },
+
+    reg(login, password) {
+      return axios.post(`/api/reg`, {login, password})
     },
 
     me() {
@@ -48,5 +56,11 @@ export const SearchApi = {
 export const NewsApi = {
     getNews() {
         return axios.get(`/api/news`)
+    }
+}
+
+export const ReviewsApi = {
+    getReviews() {
+        return axios.get(`/api/reviews`)
     }
 }

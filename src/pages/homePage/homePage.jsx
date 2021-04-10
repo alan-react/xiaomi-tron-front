@@ -1,25 +1,33 @@
 import React from 'react';
 import style from "./homePage.module.css";
-import Slider from "../../components/slider/slider";
+import HomeSlider from "../../components/slider/slider";
 import Popular from "../../components/popular/popular";
-import ProductsCategory from "../../components/ProductsCategory/ProductsСategory";
-import Navbar from "../../components/navbar/Navbar";
-import {Dropdown} from "react-bootstrap";
+import NewProducts from "../../components/newProducts/newProducts";
+import Reviews from "../../components/reviews/reviews";
+import News from "../news/news";
 
 const HomePage = () => {
     return (
         <div className={style.wrapper}>
-            <div className={style.sliderCategories}>
-                <Navbar/>
-
-                <Slider/>
+            <HomeSlider/>
+            <div className={style.popularNewProducts}>
+                <Popular/>
+                <NewProducts/>
             </div>
-            <p className={style.line}><span>Популярные товары</span></p>
-            <Popular/>
-            <p className={style.line}><span>Товары по категориям</span></p>
-            <ProductsCategory/>
+            <div className={style.reviewsNews}>
+                <Reviews/>
+                <News/>
+            </div>
         </div>
     );
 };
+
+// <div className={style.sliderCategories}>
+//     <Slider/>
+// </div>
+// <p className={style.line}><span>Популярные товары</span></p>
+// <Popular/>
+// <p className={style.line}><span>Товары по категориям</span></p>
+// <ProductsCategory/>
 
 export default HomePage;

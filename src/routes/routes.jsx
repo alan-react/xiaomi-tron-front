@@ -7,7 +7,6 @@ import CartPage from "../pages/cartPage/cartPage";
 import NotFound from "../pages/notFound/notFound";
 
 const HomePage = lazy(() => import("../pages/homePage/homePage"))
-const Reviews = lazy(() => import("../pages/reviews/reviews"))
 const News = lazy(() => import("../pages/news/news"))
 
 // нужен токен для каждого не вошедшего пользователя
@@ -30,11 +29,8 @@ const Routes = () => {
                 <Route exact path="/news">
                     <News/>
                 </Route>
-                <Route exact path="/reviews">
-                    <Reviews/>
-                </Route>
                 <Route exact path="/login">
-                    <Login/>
+                    <Login showLogin={true}/>
                     <HomePage/>
                 </Route>
                 <Route exact path="/cart">

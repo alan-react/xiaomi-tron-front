@@ -7,12 +7,16 @@ import {Provider} from "react-redux";
 import store from "./redux/store";
 import {BrowserRouter} from "react-router-dom";
 import AppMobile from "./mobile/AppMobile";
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
+
+
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
                 <Provider store={store}>
-                    <AppMobile />
+                    <AppMobile/>
                 </Provider>
             </BrowserRouter>
         </React.StrictMode>,
@@ -23,7 +27,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
         <React.StrictMode>
             <BrowserRouter>
                 <Provider store={store}>
-                    <App />
+                    <App/>
                 </Provider>
             </BrowserRouter>
         </React.StrictMode>,

@@ -1,75 +1,121 @@
+/*.wrapper {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
+
+/*.card {*/
+/*    margin-left: 10px;*/
+/*    margin-right: 10px;*/
+/*    width: 300px;*/
+/*    height: 350px;*/
+/*    text-align: center;*/
+/*    color: #ffffff;*/
+/*    background-image: linear-gradient(to right bottom,*/
+/*    #444851, #444851, #444851, #444851,*/
+/*    #444851, #4a4d61, #555070, #66527c,*/
+/*    #994f87, #ce4578, #f44751, #fe6700);*/
+/*    margin-top: 20px;*/
+/*    position: relative;*/
+/*    border-radius: 10px;*/
+/*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
+/*    transition: 0.8s;*/
+/*    !*background: no-repeat center;*!*/
+/*    !*background-size: 350px;*!*/
+/*}*/
+
+/*.bunny {*/
+/*    width: 100px;*/
+/*    display: flex;*/
+/*}*/
+
+/*.card:hover {*/
+/*    transition: 0.2s;*/
+/*    transform: scale(1.02);*/
+/*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
+/*}*/
+
+/*.title {*/
+/*    margin-left: 20px;*/
+/*    margin-top: 10px;*/
+/*    width: 90%;*/
+/*    text-align: left;*/
+/*}*/
+
+/*.img {*/
+/*    position: absolute;*/
+/*    width: 250px;*/
+/*}*/
+
+/*.cardText {*/
+/*    text-align: start;*/
+/*    opacity: 0.5;*/
+/*    margin-left: 20px;*/
+/*}*/
+
+/*.footer {*/
+/*    position: absolute;*/
+/*    bottom: 15px;*/
+/*    display: flex;*/
+/*    left: 15px;*/
+/*    justify-content: space-between;*/
+/*    width: 280px;*/
+/*}*/
+
+/*.footer button {*/
+/*    margin: 5px;*/
+/*    color: white;*/
+/*    height: 40px;*/
+/*    top: 50px;*/
+/*}*/
+
+/*.cards {*/
+/*    display: grid;*/
+/*    grid-template-columns: 1fr 1fr 1fr 1fr;*/
+/*    grid-template-rows: 1fr 1fr;*/
+/*}*/
+
 .wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-.card {
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 300px;
-    height: 350px;
-    text-align: center;
-    color: #ffffff;
-    background-image: linear-gradient(to right bottom,
-    #444851, #444851, #444851, #444851,
-    #444851, #4a4d61, #555070, #66527c,
-    #994f87, #ce4578, #f44751, #fe6700);
     margin-top: 20px;
-    position: relative;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transition: 0.8s;
-    /*background: no-repeat center;*/
-    /*background-size: 350px;*/
+    margin-bottom: 20px;
 }
 
-.bunny {
-    width: 100px;
-    display: flex;
-}
-
-.card:hover {
-    transition: 0.2s;
-    transform: scale(1.02);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.title {
-    margin-left: 20px;
-    margin-top: 10px;
-    width: 90%;
-    text-align: left;
-}
-
-.img {
-    position: absolute;
-    width: 250px;
-}
-
-.cardText {
-    text-align: start;
-    opacity: 0.5;
-    margin-left: 20px;
-}
-
-.footer {
-    position: absolute;
-    bottom: 15px;
-    display: flex;
-    left: 15px;
-    justify-content: space-between;
-    width: 280px;
-}
-
-.footer button {
-    margin: 5px;
-    color: white;
-    height: 40px;
-    top: 50px;
+.wrapper h3 {
+    margin-left: 3%;
+    font-size: 40px;
+    margin-bottom: 15px;
+    font-weight: lighter;
+    display: inline-block;
 }
 
 .cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+
+.newsCard {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.newsCard img {
+    width: 400px;
+}
+
+.info {
+    font-weight: lighter;
+    font-family: "Roboto Light";
+}
+
+.title {
+    font-size: 20px;
+    margin-top: 5px;
+
+}
+
+.date {
+    opacity: 0.7;
 }

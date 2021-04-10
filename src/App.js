@@ -13,11 +13,13 @@ import {connect} from "react-redux";
 import {login} from "./redux/reducers/authReducer";
 import {getProductsBySearch, initialize} from "./redux/reducers/mainReducer";
 import BaseLoader from "./components/loader/loader";
+import Navbar from "./components/navbar/navbar";
 
 const App = ({
                  login, isAuth, getProductsBySearch,
                  searchProducts, initialize, initialized
              }) => {
+
     const [showLogin, setShowLogin] = useState(false)
     const [showCart, setShowCart] = useState(false)
     const [showForgot, setShowForgot] = useState(false)
@@ -35,19 +37,17 @@ const App = ({
     const HandleShowForgot = () => setShowForgot(true)
     const HandleCloseForgot = () => setShowForgot(false)
 
-    const footerRef = useRef()
     if (initialized) return (
         <>
-            <Header searchProducts={searchProducts}
-                    getProducts={getProductsBySearch}
-                    isAuth={isAuth} footerRef={footerRef}
-                    showLogin={HandleShowLogin} showCart={HandleShowCart}/>
+            <Header isAuth={isAuth} showLogin={HandleShowLogin}/>
+            <Navbar getProducts={getProductsBySearch}
+                    searchProducts={searchProducts} showCart={HandleShowCart}/>
             <Login login={login} closeLogin={HandleCloseLogin} showLogin={showLogin}
                    showForgot={HandleShowForgot}/>
             <Forgot closeForgot={HandleCloseForgot} showForgot={showForgot}/>
             <Cart showCart={showCart} closeCart={HandleCloseCart}/>
             <Routes/>
-            <Footer footerRef={footerRef}/>
+            <Footer/>
         </>
     )
     else return <BaseLoader/>

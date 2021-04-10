@@ -1,0 +1,40 @@
+.content {
+    background-color: #EFEFEF;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.cards {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.name {
+    margin-left: 3%;
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: lighter;
+}
+
+.card {
+    font-family: "Roboto Light";
+    color: black;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.title {
+    max-width: 400px;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px 10px 15px 10px;
+    border-bottom: 3px solid #fe6700;
+}
+

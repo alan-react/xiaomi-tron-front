@@ -6,6 +6,7 @@ import imgRabbit from "../../assets/bunny.png"
 import {connect} from "react-redux";
 import {getNews} from "../../redux/reducers/newsReducer";
 import BaseLoader from "../../components/loader/loader";
+import newImg from "../../assets/Xiaomi-Mi-TV.jpg"
 
 const NewsCard = ({text, name}) => {
     // style={{backgroundImage: `url(${img})`}}
@@ -20,33 +21,47 @@ const NewsCard = ({text, name}) => {
     }
 
     return (
-        <div className={style.card}>
-            <h3 className={style.title}>{name}</h3>
-            <div className={style.cardText}>
-                {kitcut(text, 100)}
-            </div>
-            <div className={style.footer}>
-                <Button variant="outlined" color="inherit" className={style.button}>Смотреть</Button>
-                <img className={style.bunny} src={imgRabbit} alt="logo"/>
+        <div className={style.newsCard}>
+            <img src={newImg} alt="img"/>
+            <div className={style.info}>
+                <h4 className={style.title}>Заголовок новости</h4>
+                <div className={style.date}>12.01.2021</div>
             </div>
         </div>
     )
 }
 
+// <div className={style.card}>
+//     <h3 className={style.title}>{name}</h3>
+//     <div className={style.cardText}>
+//         {kitcut(text, 100)}
+//     </div>
+//     <div className={style.footer}>
+//         <Button variant="outlined" color="inherit" className={style.button}>Смотреть</Button>
+//         <img className={style.bunny} src={imgRabbit} alt="logo"/>
+//     </div>
+// </div>
 
 const News = ({getNews, news}) => {
 
-    useEffect(() => {
-        if (!news) getNews()
-    }, [news])
-    if (news) return (
+    // useEffect(() => {
+    //     if (!news) getNews()
+    // }, [news])
+    // if (news)
+    return (
         <div className={style.wrapper}>
+            <h3>Новости</h3>
             <div className={style.cards}>
-                {news.map((n, index) => <NewsCard name={n.name} key={index} text={n.information}/>)}
+                <NewsCard/>
+                <NewsCard/>
+                <NewsCard/>
+                <NewsCard/>
+                <NewsCard/>
+                <NewsCard/>
             </div>
         </div>
     )
-    else return <BaseLoader/>
+    // else return <BaseLoader/>
 }
 
 const mapStateToProps = (state) => ({

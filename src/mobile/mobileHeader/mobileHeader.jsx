@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button, Form, FormControl, Nav, Navbar, NavDropdown} from "react-bootstrap";
-import logo from "../../assets/Xiaomi_logo.png"
+import logo from "../../assets/pngwing.com.png"
 import style from "./mobileHeader.module.css"
 import {Link} from "react-router-dom";
 

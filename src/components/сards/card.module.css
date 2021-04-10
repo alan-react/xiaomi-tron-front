@@ -11,7 +11,7 @@
 }
 
 .byBtn {
-    border: 1px solid #FE6700;
+    border: 1px solid #151515 !important;
     padding-right: 10px;
     width: 150px;
 }
@@ -34,14 +34,14 @@
 }
 
 .card {
-    margin: 5px;
+    margin: 10px 5px;
     max-height: 440px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: 0.8s;
+    box-shadow: none !important;
 }
 
 .card:hover {
     transition: 0.2s;
     transform: scale(1.02);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: none;
 }

@@ -5,6 +5,8 @@ const AppMobile = () => {
     return (
         <>
             <MobileHeader/>
+            у Армана мать сдохла...
+            и у меня тоже...
         </>
     );
 };
