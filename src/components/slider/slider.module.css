@@ -35,12 +35,14 @@
 /*    width: 1400px;*/
 /*}*/
 .bg {
-    background-size: 100%
+    background-size: 100% !important;
+    width: 100vw !important;
+    min-width: 100vw !important;
 }
 
 
 .center p {
-    color: white;
+    color: #000;
     font-size: 25px;
 }
 

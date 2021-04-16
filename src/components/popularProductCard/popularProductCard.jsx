@@ -21,8 +21,8 @@ const PopularProductCard = ({image, title, oldPrice, actualPrice}) => {
                     image={image}
                  />
                 <CardContent style={{paddingTop: 0, marginTop: 0,
-                    marginBottom: 0, paddingBottom: 0, height: 100}}>
-                    <Typography className={styles.title} style={{fontSize: 18}}
+                    marginBottom: 15, paddingBottom: 0, height: 100}}>
+                    <Typography className={styles.title} style={{fontSize: 16}}
                                 gutterBottom variant="h5" component="h2">
                         {title}
                     </Typography>
@@ -47,9 +47,4 @@ const PopularProductCard = ({image, title, oldPrice, actualPrice}) => {
 }
 
 
-
-const mapStateToProps = () => ({
-
-})
-
-export default connect(mapStateToProps, {})(PopularProductCard)
+export default PopularProductCard;

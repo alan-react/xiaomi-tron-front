@@ -78,7 +78,7 @@ const Login = ({showLogin, closeLogin, showForgot, login, isAuth}) => {
                                 color="primary"
                                 onClick={handleLogin}>
                             Войти</Button>
-                        <p className="forgot-password text-right">
+                        <p className="forgot-password text-right mt-2">
                             Забыли <a onClick={() => {showForgot(); closeLogin()}}>пароль?</a>
                         </p>
                     </div>

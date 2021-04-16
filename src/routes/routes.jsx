@@ -1,10 +1,11 @@
 import React, {lazy, Suspense} from 'react';
-import {Route, Switch} from "react-router-dom"
+import {Route, Switch, useLocation} from "react-router-dom"
 
 import BaseLoader from "../components/loader/loader";
 import Login from "../components/login/login";
 import CartPage from "../pages/cartPage/cartPage";
 import NotFound from "../pages/notFound/notFound";
+import ProductPage from "../pages/productPage/productPage";
 
 const HomePage = lazy(() => import("../pages/homePage/homePage"))
 const News = lazy(() => import("../pages/news/news"))
@@ -15,14 +16,15 @@ const News = lazy(() => import("../pages/news/news"))
 
 const Routes = () => {
 
+    const location = useLocation()
 
-    if (window.location.href === "http://localhost:3000/admin") {
+    if (location.href === "http://localhost:3000/admin") {
         window.location = "http://127.0.0.1:8000/admin"
     }
 
     return (
         <Suspense fallback={<BaseLoader/>}>
-            <Switch>
+            <Switch location={location} key={location.key}>
                 <Route exact path="/">
                     <HomePage/>
                 </Route>
@@ -36,7 +38,10 @@ const Routes = () => {
                 <Route exact path="/cart">
                     <CartPage/>
                 </Route>
-                <Route>
+                <Route exact path="/product/:slug">
+                    <ProductPage/>
+                </Route>
+                <Route path="*" >
                     <NotFound/>
                 </Route>
             </Switch>

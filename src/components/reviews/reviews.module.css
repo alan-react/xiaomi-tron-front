@@ -27,13 +27,12 @@
     color: black;
     margin-right: 10px;
     margin-left: 10px;
-    margin-top: 20px;
 }
 
 .title {
     max-width: 400px;
     text-align: center;
-    font-size: 18px;
+    font-size: 17px;
     padding: 10px 10px 15px 10px;
     border-bottom: 3px solid #fe6700;
 }

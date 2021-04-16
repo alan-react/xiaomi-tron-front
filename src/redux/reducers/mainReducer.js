@@ -75,11 +75,8 @@ const setReviews = (data) => ({type: SET_REVIEWS, data})
 
 export const initialize = () => async (dispatch) => {
     const response = await ProductsApi.getSliderImages()
-
     dispatch(setSliderImages(response.data))
-
     dispatch(initializeSuccess())
-
 }
 
 export const getProductsBySearch = (text) => async (dispatch) => {
@@ -102,7 +99,6 @@ export const getPopularProducts = () => async (dispatch) => {
 
 export const getReviews = () => async (dispatch) => {
     const data = await ReviewsApi.getReviews()
-    // console.log(data.data);
     dispatch(setReviews(data.data))
 }
 

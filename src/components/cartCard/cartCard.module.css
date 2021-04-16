@@ -1,40 +1,9 @@
 .wrapper {
     width: 100%;
-    margin: 0 25px;
-}
-
-.card {
     display: flex;
-    width: 450px;
-    justify-content: space-between;
-}
-
-.cardСoll{
-    display: flex;
-}
-.description {
-    justify-content: start;
-}
-
-.button {
-    width: 90px;
-    height: 40px;
-    background-color: #FE6700 !important;
+    margin: 10px 30px;
 }
 
 .title {
-    height: max-content;
-    width: max-content;
-
-}
-
-.img {
-    width: 70px;
-    margin: 0 10px 0 0;
-}
-
-.price {
-    height: max-content;
-    width: max-content;
-    opacity: 0.7;
+    margin: 10px;
 }

@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import logo from "../../assets/pngwing.com.png"
 
 import style from "./header.module.css";
+import {div} from "mdb-ui-kit/src/js/mdb/perfect-scrollbar/lib/dom";
 
 // const Styles = styled.div`
 //   a, .navbar-brand, .navbar-nav .nav-link {
@@ -15,9 +16,8 @@ import style from "./header.module.css";
 //   }
 // `
 
-const Header = ({showLogin, footerRef, isAuth, getProducts, searchProducts}) => {
+const Header = ({showLogin, isAuth, getProducts, searchProducts}) => {
 
-    const focusHandler = () => footerRef.current.focus()
 
     return (
         <header className={style.header}>
@@ -27,11 +27,12 @@ const Header = ({showLogin, footerRef, isAuth, getProducts, searchProducts}) => 
                     </Link>
                     <h1 className={style.title}><Link to="/">Xiaomi Tron</Link></h1>
                 </div>
-                <div className={style.buttons}>
+            {isAuth ?
+               <div></div>
+             :  <div className={style.buttons}>
                     <div className={style.button}>Регистрация</div>
                     <div className={style.button} onClick={showLogin}>Войти</div>
-                </div>
-
+                </div>}
         </header>
     )
 }

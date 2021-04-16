@@ -25,6 +25,22 @@ const Popular = ({products, getPopularProducts}) => {
                                                 actualPrice={product.newprice}
                                                 title={product.name}
                                                 oldPrice={product.oldprice}/>
+                            <PopularProductCard key={id} image={product.image}
+                                                actualPrice={product.newprice}
+                                                title={product.name}
+                                                oldPrice={product.oldprice}/>
+                            <PopularProductCard key={id} image={product.image}
+                                                actualPrice={product.newprice}
+                                                title={product.name}
+                                                oldPrice={product.oldprice}/>
+                            <PopularProductCard key={id} image={product.image}
+                                                actualPrice={product.newprice}
+                                                title={product.name}
+                                                oldPrice={product.oldprice}/>
+                            <PopularProductCard key={id} image={product.image}
+                                                actualPrice={product.newprice}
+                                                title={product.name}
+                                                oldPrice={product.oldprice}/>
                         </>
                     )
                 )}

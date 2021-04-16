@@ -1,10 +1,20 @@
-import React from 'react';
-import {Link} from "react-router-dom";
+import React, {useEffect} from 'react';
+import {Link, useHistory} from "react-router-dom";
 import style from "./notFound.module.css"
 import img from "../../assets/pppp-removebg-preview.png"
 
 
 const NotFound = () => {
+
+    const history = useHistory()
+
+    useEffect(() => {
+        setTimeout(() => history.replace("/"), 5000)
+        return function cleanup () {
+            clearTimeout()
+        }
+    }, [])
+
     return (
             <div className={style.wrapper}>
                 <h2>404</h2>

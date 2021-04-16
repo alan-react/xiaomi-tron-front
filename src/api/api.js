@@ -7,7 +7,7 @@ export const ProductsApi = {
     },
 
     getSliderImages() {
-        return axios.get(`/api/sliders`)
+        return axios.get(`/api/slides`)
     },
 
     getProducts() {

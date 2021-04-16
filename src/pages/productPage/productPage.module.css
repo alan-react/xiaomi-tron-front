@@ -1,0 +1,82 @@
+.smallImages img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    object-position: 0 0;
+}
+
+.mainImage img {
+    display: block;
+    width: 380px;
+    height: 360px;
+    object-fit: cover;
+    object-position: 0 0;
+}
+
+.wrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.info {
+    display: block;
+    margin-left: 50px;
+}
+
+.title {
+    opacity: 0.7;
+    font-size: 45px;
+}
+
+.price {
+    padding-left: 10px;
+    border-left: 5px solid black;
+    font-size: 36px;
+    font-family: Ubuntu;
+}
+
+.actions {
+    margin: 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid black;
+}
+
+.buy {
+    border-radius: 0 !important;
+    width: 300px;
+    height: 40px;
+    border: none;
+    background-color: #050505 !important;
+    color: white !important;
+    font-size: 20px;
+}
+
+.caption {
+    font-size: 18px;
+}
+
+.addToCart {
+    color: #6C6C6C;
+    font-family: Ubuntu;
+    font-size: 20px;
+    height: 40px;
+    border-radius: 0 !important;
+    border: none;
+    background-color: white;
+    width: 150px;
+    -webkit-transition: background-color 0.5s ease-out !important;
+
+}
+
+.addToCart:hover {
+    -webkit-transition: background-color 0.5s ease-out;
+    background-color: black !important;
+    color: white !important;
+}
+
+.notActiveImg {
+    opacity: 0.5;
+    width: 120px;
+}

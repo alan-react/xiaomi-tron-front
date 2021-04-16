@@ -15,8 +15,10 @@ const HomePage = () => {
                 <NewProducts/>
             </div>
             <div className={style.reviewsNews}>
-                <Reviews/>
-                <News/>
+                <div style={{maxWidth: 1400}}>
+                    <Reviews/>
+                    <News/>
+                </div>
             </div>
         </div>
     );

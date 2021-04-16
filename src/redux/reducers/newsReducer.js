@@ -23,7 +23,9 @@ const setNews = (news) => ({type: SET_NEWS, news})
 
 export const getNews = () => async (dispatch) => {
     const response = await NewsApi.getNews()
+    debugger
     dispatch(setNews(response.data))
+
 }
 
 export default newsReducer

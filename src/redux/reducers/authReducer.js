@@ -1,6 +1,7 @@
 import {AuthApi} from "../../api/api";
 
 const LOGIN_SUCCESS = "/authReducer/LOGIN_SUCCESS"
+const LOGOUT_SUCCESS = "/authReducer/LOGOUT_SUCCESS"
 
 const initialState = {
     isAuth: false
@@ -20,7 +21,7 @@ const authReducer = (state = initialState, action) => {
 }
 
 const loginSuccess = () => ({type: LOGIN_SUCCESS})
-
+const logoutSuccess = () => ({type: LOGOUT_SUCCESS})
 
 export const login = (email, password) => async (dispatch) => {
     const response = await AuthApi.login(email, password)
@@ -31,4 +32,3 @@ export const login = (email, password) => async (dispatch) => {
 }
 
 export default authReducer
-
