@@ -11,10 +11,12 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 
 import style from "./card.module.css"
+import {Link} from "react-router-dom";
 
 
-const ProductCard = ({price, title, img, available}) => {
+const ProductCard = ({price, title, img, available, slug}) => {
     return (
+        <Link to={"product/" + slug}>
         <Card className={style.card}>
             <CardActionArea>
                 <CardMedia
@@ -38,6 +40,8 @@ const ProductCard = ({price, title, img, available}) => {
                 </Button>
             </CardActions>
         </Card>
+        </Link>
+
     );
 }
 

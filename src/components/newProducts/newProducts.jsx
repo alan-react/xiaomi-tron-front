@@ -13,17 +13,13 @@ const NewProducts = () => {
             <div className={style.cards}>
                 {test.map(() =>
                     <>
-                        <Link to={"product/slug"}>
-                            <ProductCard title={"Redmi note 5"}
-                                         img={img} price="80000"
-                                         available={true}/>
-                        </Link>
-                        <Link to={"product/slug"}>
+                        <ProductCard slug="slug" title={"Redmi note 5"}
+                                     img={img} price="80000"
+                                     available={true}/>
 
-                            <ProductCard title={"Redmi note 5"}
-                                         img={img} price="80000"
-                                         available={true}/>
-                        </Link>
+                        <ProductCard slug="slug" title={"Redmi note 5"}
+                                     img={img} price="80000"
+                                     available={true}/>
                     </>)}
             </div>
         </div>

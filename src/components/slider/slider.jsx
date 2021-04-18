@@ -5,6 +5,7 @@ import {connect} from "react-redux";
 import style from "./slider.module.css"
 
 const HomeSlider = ({images}) => {
+
     return (
         <Slider autoplay={3000}>
             {images.images.map((item, index) => (
@@ -14,7 +15,7 @@ const HomeSlider = ({images}) => {
                     style={{background: `url('${item.image}') no-repeat center center`}}>
                     <div className={style.center}>
                         <h1>{item.title}</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur. Lorem ipsum.</p>
+                        <p>{item.name}</p>
                         <button className={style.btn}>Смотреть</button>
                     </div>
                 </div>
@@ -25,7 +26,7 @@ const HomeSlider = ({images}) => {
 }
 
 const mapStateToProps = (state) => ({
-    images: state.main.sliderImages
+    images: state.main.sliderImages,
 })
 
 export default connect(mapStateToProps, {})(HomeSlider)

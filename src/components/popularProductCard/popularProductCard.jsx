@@ -12,7 +12,7 @@ import Button from "@material-ui/core/Button";
 import React from 'react';
 
 
-const PopularProductCard = ({image, title, oldPrice, actualPrice}) => {
+const PopularProductCard = ({image, title, oldPrice, actualPrice, showAlert}) => {
     return (
         <Card className={styles.card}>
             <CardActionArea>
@@ -37,7 +37,8 @@ const PopularProductCard = ({image, title, oldPrice, actualPrice}) => {
                 </CardContent>
             </CardActionArea>
             <CardActions className={styles.cardButtons}>
-                <AddShoppingCartIcon className={styles.icon}/>
+                <AddShoppingCartIcon className={styles.icon}
+                                     onClick={() => showAlert("Продукт добавлен в корзину", 5000, "Внимание")}/>
                 <Button className={styles.byBtn} size="small" variant="outlined">
                     Купить
                 </Button>

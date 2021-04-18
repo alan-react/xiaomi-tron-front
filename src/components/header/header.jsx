@@ -16,7 +16,7 @@ import {div} from "mdb-ui-kit/src/js/mdb/perfect-scrollbar/lib/dom";
 //   }
 // `
 
-const Header = ({showLogin, isAuth, getProducts, searchProducts}) => {
+const Header = ({showLogin, isAuth, showReg}) => {
 
 
     return (
@@ -30,7 +30,7 @@ const Header = ({showLogin, isAuth, getProducts, searchProducts}) => {
             {isAuth ?
                <div></div>
              :  <div className={style.buttons}>
-                    <div className={style.button}>Регистрация</div>
+                    <div className={style.button} onClick={showReg}>Регистрация</div>
                     <div className={style.button} onClick={showLogin}>Войти</div>
                 </div>}
         </header>

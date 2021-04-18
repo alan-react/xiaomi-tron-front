@@ -23,9 +23,10 @@ export const AuthApi = {
     login(login, password) {
         return axios.post(`/api/auth`, {login, password})
     },
-
-    reg(login, password) {
-      return axios.post(`/api/reg`, {login, password})
+    // запрос на рег.
+    reg(name, surname, email, phone, password) {
+        // меняя эти параметры изменяется запрос на бэк...
+      return axios.post(`/api/reg`, {name, surname, email, phone, password})
     },
 
     me() {

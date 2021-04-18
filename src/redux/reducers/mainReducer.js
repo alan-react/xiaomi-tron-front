@@ -6,6 +6,8 @@ const INITIALIZE_SUCCESS = "mainReducer/INITIALIZE_SUCCESS"
 const SET_SLIDER_IMAGES = "mainReducer/SET_SLIDER_IMAGES"
 const SET_POPULAR_PRODUCTS = "mainReducer/SET_POPULAR_PRODUCTS"
 const SET_REVIEWS = "mainReducer/SET_REVIEWS"
+const SHOW_ALERT = "mainReducer/SHOW_ALERT"
+const CLOSE_ALERT = "mainReducer/CLOSE_ALERT"
 
 const initialState = {
     products: null,
@@ -14,6 +16,11 @@ const initialState = {
     initialized: false,
     sliderImages: null,
     reviews: null,
+    alert: {
+        show: false,
+        message: null,
+        title: null
+    }
 }
 
 const mainReducer = (state = initialState, action) => {
@@ -61,6 +68,28 @@ const mainReducer = (state = initialState, action) => {
             }
         }
 
+        case SHOW_ALERT: {
+            return {
+                ...state,
+                alert: {
+                    show: true,
+                    message: action.message,
+                    title: action.title
+                }
+            }
+        }
+
+        case CLOSE_ALERT: {
+            return {
+                ...state,
+                alert: {
+                    show: false,
+                    message: null,
+                    title: null
+                }
+            }
+        }
+
         default:
             return state
     }
@@ -72,6 +101,7 @@ const initializeSuccess = () => ({type: INITIALIZE_SUCCESS})
 const setSliderImages = (images) => ({type: SET_SLIDER_IMAGES, images})
 const setPopularProducts = (data) => ({type: SET_POPULAR_PRODUCTS, data})
 const setReviews = (data) => ({type: SET_REVIEWS, data})
+export const closeAlert = () => ({type: CLOSE_ALERT})
 
 export const initialize = () => async (dispatch) => {
     const response = await ProductsApi.getSliderImages()
@@ -84,6 +114,11 @@ export const getProductsBySearch = (text) => async (dispatch) => {
         const response = await SearchApi.search(text)
         dispatch(setSearchProducts(response.data.products))
     }
+}
+
+export const showAlert = (message, timeout, title) => (dispatch) => {
+    dispatch({type: SHOW_ALERT, message, title})
+    setTimeout(() => dispatch(closeAlert()), timeout )
 }
 
 

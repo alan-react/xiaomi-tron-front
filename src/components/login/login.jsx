@@ -16,7 +16,7 @@ const Login = ({showLogin, closeLogin, showForgot, login, isAuth}) => {
 
     const handleChangeEmail = (e) => {
         setEmailValue(e.target.value)
-        if (validator.isEmail(e.target.value)) {
+        if (!!validator.isEmail(e.target.value)) {
             setError(null)
         } else {
             setError('Введите корректный Email')
@@ -27,7 +27,7 @@ const Login = ({showLogin, closeLogin, showForgot, login, isAuth}) => {
     const handleLogin = () => {
         login(emailValue, passwordValue)
         if (!emailValue) {setError("Заполните Email ")}
-        if (!passwordValue) {setError("Заполните пароль ")}
+        if (!passwordValue || passwordValue.length < 6 ) {setError("Введите корректный пароль")}
         if (isAuth) {
             setPasswordValue("")
             setEmailValue("")
@@ -43,7 +43,7 @@ const Login = ({showLogin, closeLogin, showForgot, login, isAuth}) => {
                         <h3>Авторизация</h3>
                     </Modal.Header>
                     <div className={style.formWrapper}>
-                        <div className="form-group">
+                        <div>
                             <label>Email</label>
                             <input type="email"
                                    name="email"
@@ -52,8 +52,6 @@ const Login = ({showLogin, closeLogin, showForgot, login, isAuth}) => {
                                    className={style.input}
                                    placeholder="Введите email"/>
                         </div>
-                        {error && <span>{error}</span>}
-
                         <div className="form-group">
                             <label>Пароль</label>
                             <div>
@@ -65,9 +63,10 @@ const Login = ({showLogin, closeLogin, showForgot, login, isAuth}) => {
                                        placeholder="Введите пароль"/>
                             </div>
                         </div>
+                        {error && <span className={style.formError}>{error}</span>}
 
-                        <div className="form-group">
-                            <div className="custom-control custom-checkbox">
+                        <div>
+                            <div className="custom-control custom-checkbox mt-2 mb-2">
                                 <input type="checkbox" className="custom-control-input" id="customCheck1"/>
                                 <label className="custom-control-label" htmlFor="customCheck1">Запомнить меня</label>
                             </div>
@@ -75,12 +74,13 @@ const Login = ({showLogin, closeLogin, showForgot, login, isAuth}) => {
 
                         <Button variant="contained"
                                 className={style.button}
-                                color="primary"
+                                color="default"
                                 onClick={handleLogin}>
                             Войти</Button>
                         <p className="forgot-password text-right mt-2">
                             Забыли <a onClick={() => {showForgot(); closeLogin()}}>пароль?</a>
                         </p>
+
                     </div>
                 </form>
             </Modal>

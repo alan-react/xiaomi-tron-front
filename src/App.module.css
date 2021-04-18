@@ -1,0 +1,10 @@
+.alertContainerHolder {
+    display: flex;
+    position: fixed;
+    top: 98px;
+    right: 0;
+    flex-direction: column;
+    width: 400px;
+    max-height: 1000px;
+    z-index: 100001;
+}

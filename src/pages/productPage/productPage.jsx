@@ -31,7 +31,7 @@ const ProductPage = () => {
                     Xiaomi mi 11
                 </div>
                 <div className={styles.price}>
-                    290 990 KZT
+                    500 000 - 570 000 KZT
                 </div>
                 <div className={styles.actions}>
                     <Button className={styles.addToCart}>В корзину</Button>

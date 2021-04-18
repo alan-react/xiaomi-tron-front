@@ -6,6 +6,7 @@ import Login from "../components/login/login";
 import CartPage from "../pages/cartPage/cartPage";
 import NotFound from "../pages/notFound/notFound";
 import ProductPage from "../pages/productPage/productPage";
+import {AnimatePresence} from "framer-motion";
 
 const HomePage = lazy(() => import("../pages/homePage/homePage"))
 const News = lazy(() => import("../pages/news/news"))
@@ -23,29 +24,29 @@ const Routes = () => {
     }
 
     return (
-        <Suspense fallback={<BaseLoader/>}>
-            <Switch location={location} key={location.key}>
-                <Route exact path="/">
-                    <HomePage/>
-                </Route>
-                <Route exact path="/news">
-                    <News/>
-                </Route>
-                <Route exact path="/login">
-                    <Login showLogin={true}/>
-                    <HomePage/>
-                </Route>
-                <Route exact path="/cart">
-                    <CartPage/>
-                </Route>
-                <Route exact path="/product/:slug">
-                    <ProductPage/>
-                </Route>
-                <Route path="*" >
-                    <NotFound/>
-                </Route>
-            </Switch>
-        </Suspense>
+            <Suspense fallback={<BaseLoader/>}>
+                <Switch location={location} key={location.key}>
+                    <Route exact path="/">
+                        <HomePage/>
+                    </Route>
+                    <Route exact path="/news">
+                        <News/>
+                    </Route>
+                    <Route exact path="/login">
+                        <Login showLogin={true}/>
+                        <HomePage/>
+                    </Route>
+                    <Route exact path="/cart">
+                        <CartPage/>
+                    </Route>
+                    <Route exact path="/product/:slug">
+                        <ProductPage/>
+                    </Route>
+                    <Route path="*">
+                        <NotFound/>
+                    </Route>
+                </Switch>
+            </Suspense>
     );
 };
 
